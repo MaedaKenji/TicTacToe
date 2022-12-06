@@ -106,7 +106,7 @@ void computer()
     if (layout[0][0]+layout[1][1] == 2 && layout[2][2]==0) {  layout [2][2]=-1;   return;}
     if (layout[0][0]+layout[2][2] == 2 && layout[1][1]==0) {  layout [1][1]=-1;  return;}
     if (layout[1][1]+layout[2][2] == 2 && layout[0][0]==0) {  layout [0][0]=-1;   return;}
-    // Untuk Menang
+    // Untuk Menang Diagonal kanan
     if (layout[0][0]+layout[1][1] == -2 && layout[2][2]==0) {  layout [2][2]=-1;   return;}
     if (layout[0][0]+layout[2][2] == -2 && layout[1][1]==0) {  layout [1][1]=-1;  return;}
     if (layout[1][1]+layout[2][2] == -2 && layout[0][0]==0) {  layout [0][0]=-1;   return;}
@@ -115,10 +115,10 @@ void computer()
     if (layout[2][0]+layout[1][1] == 2  && layout[0][2]==0) {  layout [0][2]=-1;    return;}
     if (layout[2][0]+layout[0][2] == 2  && layout[1][1]==0) {  layout [1][1]=-1;    return;}
     if (layout[1][1]+layout[0][2] == 2  && layout[2][0]==0) {  layout [2][0]=-1;    return;}
-    // Untuk menang
-    if (layout[2][0]+layout[1][1] == 2  && layout[0][2]==0) {  layout [0][2]=-1;    return;}
-    if (layout[2][0]+layout[0][2] == 2  && layout[1][1]==0) {  layout [1][1]=-1;    return;}
-    if (layout[1][1]+layout[0][2] == 2  && layout[2][0]==0) {  layout [2][0]=-1;    return;}
+    // Untuk menang Diagonal kiri
+    if (layout[2][0]+layout[1][1] == -2  && layout[0][2]==0) {  layout [0][2]=-1;    return;}
+    if (layout[2][0]+layout[0][2] == -2  && layout[1][1]==0) {  layout [1][1]=-1;    return;}
+    if (layout[1][1]+layout[0][2] == -2  && layout[2][0]==0) {  layout [2][0]=-1;    return;}
 
 
     //Baris
