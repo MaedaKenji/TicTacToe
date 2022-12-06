@@ -101,62 +101,23 @@ void input()
 
 
 void computer()
-{
-    // Diagonal Kanan
-    if (layout[0][0]+layout[1][1] == 2 && layout[2][2]==0) {  layout [2][2]=-1;   return;}
-    if (layout[0][0]+layout[2][2] == 2 && layout[1][1]==0) {  layout [1][1]=-1;  return;}
-    if (layout[1][1]+layout[2][2] == 2 && layout[0][0]==0) {  layout [0][0]=-1;   return;}
-    // Untuk Menang
-    if (layout[0][0]+layout[1][1] == -2 && layout[2][2]==0) {  layout [2][2]=-1;   return;}
-    if (layout[0][0]+layout[2][2] == -2 && layout[1][1]==0) {  layout [1][1]=-1;  return;}
-    if (layout[1][1]+layout[2][2] == -2 && layout[0][0]==0) {  layout [0][0]=-1;   return;}
-
-    // Diagonal Kiri
-    if (layout[2][0]+layout[1][1] == 2  && layout[0][2]==0) {  layout [0][2]=-1;    return;}
-    if (layout[2][0]+layout[0][2] == 2  && layout[1][1]==0) {  layout [1][1]=-1;    return;}
-    if (layout[1][1]+layout[0][2] == 2  && layout[2][0]==0) {  layout [2][0]=-1;    return;}
-    // Untuk menang
-    if (layout[2][0]+layout[1][1] == 2  && layout[0][2]==0) {  layout [0][2]=-1;    return;}
-    if (layout[2][0]+layout[0][2] == 2  && layout[1][1]==0) {  layout [1][1]=-1;    return;}
-    if (layout[1][1]+layout[0][2] == 2  && layout[2][0]==0) {  layout [2][0]=-1;    return;}
+{   if (layout[1][1]==0) {  layout[1][1]=-1;    return;}
 
 
-    //Baris
-    for (i=0;i<3;i++)
-    {
-        sum=0;
-        for (j=0;j<3;j++)
-        {   sum += layout[i][j];
-            if (sum==2 && layout [i][j+1]==0 && j!=2) {   layout[i][j+1] = -1;    return;}
-            else if (sum==-2 && layout [i][j+1]==0 && j!=2 ) {   layout[i][j+1] = -1;    return;}
-        }
 
-    }
 
-    // Kolom
-    for (i=0;i<3;i++)
-    {
-        sum=0;
-        for (j=0;j<3;j++)
-        {   sum += layout[j][i];
-            if (sum==2 && layout [j+1][i]==0 && j!=2) { layout[j+1][i] = -1; return;}
-            else if (sum==2 && layout[j-1][i-1]==0) {layout[j-1][i-1]=-1;   return;}
-            else if (sum==2 && layout[j-2][i-2]==0) {layout[j-2][i-2]=-1;   return;}
-        }
-    }
 
-    if (layout[1][1]==0) {  layout[1][1]=-1;   return; }
-    else
-    {   for (int i=0;i<3;i++)
-            {   for (int j=0;j<3;j++)
-                    {   if (layout[i][j]==0)
-                            {   layout[i][j]= -1;
-                                return;
-                            }
+
+    for (int i=0;i<3;i++)
+        {   for (int j=0;j<3;j++)
+            {   if (layout[i][j]==0)
+                    {   layout[i][j]=-1;
+                        return;
                     }
+
             }
 
-    }
+        }
 
 }
 
